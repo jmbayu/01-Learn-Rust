@@ -37,12 +37,12 @@ RUN rustup component add rls --toolchain stable-x86_64-unknown-linux-gnu
 ## Adds language support for Rust
 RUN code-server --install-extension rust-lang.rust
 
-## Alternative Rust Language Server
-RUN code-server --install-extension matklad.rust-analyzer
+## Alternative Rust Language Server - seems to conflict with rust-lang.rust?
+#RUN code-server --install-extension matklad.rust-analyzer
 ### Download and Install rus-analyzer binary
-RUN mkdir -p /home/rustdev/.local/share/code-server/User/globalStorage/matklad.rust-analyzer/
-RUN curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux -o /home/rustdev/.local/share/code-server/User/globalStorage/matklad.rust-analyzer/rust-analyzer-linux
-RUN chmod u+x /home/rustdev/.local/share/code-server/User/globalStorage/matklad.rust-analyzer/rust-analyzer-linux
+#RUN mkdir -p /home/rustdev/.local/share/code-server/User/globalStorage/matklad.rust-analyzer/
+#RUN curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-linux -o /home/rustdev/.local/share/code-server/User/globalStorage/matklad.rust-analyzer/rust-analyzer-linux
+#RUN chmod u+x /home/rustdev/.local/share/code-server/User/globalStorage/matklad.rust-analyzer/rust-analyzer-linux
 
 ## Debugging tools
 ## Install from the vsix instead of using extension id because of this issue: https://github.com/vadimcn/vscode-lldb/issues/314
