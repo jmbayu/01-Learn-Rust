@@ -46,8 +46,8 @@ RUN chmod u+x /home/rustdev/.local/share/code-server/User/globalStorage/matklad.
 
 ## Debugging tools
 ## Install from the vsix instead of using extension id because of this issue: https://github.com/vadimcn/vscode-lldb/issues/314
-RUN curl -L https://github.com/vadimcn/vscode-lldb/releases/download/v1.6.0/codelldb-x86_64-linux.vsix -o codelldb-x86_64-linux.vsix
-RUN code-server --install-extension codelldb-x86_64-linux.vsix
+RUN curl -L https://github.com/vadimcn/vscode-lldb/releases/download/v1.6.3/codelldb-x86_64-linux.vsix -o codelldb-x86_64-linux.vsix
+RUN code-server -vvv --install-extension codelldb-x86_64-linux.vsix --force
 RUN rm -f codelldb-x86_64-linux.vsix
 
 ## Toml extension, usefull to edit cargo configuration files
